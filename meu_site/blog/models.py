@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.fields.related import create_many_to_many_intermediary_model
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 
@@ -29,6 +30,9 @@ class Post(models.Model):
     
     objects   = models.Manager()
     published = PublishedManager()
+
+    def get_absolute_url(self):
+        return reverse('post_detail',args=[self.pk])
 
     class Meta:
         ordering = ('-publicado',)
