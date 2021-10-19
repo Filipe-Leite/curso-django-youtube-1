@@ -6,5 +6,6 @@
             <h2>{{ object.titulo }}</h2>
             <p>{{ object.conteudo }} </p>
         </div>
+        <a href="{% url 'post_edit' post.pk %}">+ Editar Postagem do blog</a>
 
 {% endblock content %}
