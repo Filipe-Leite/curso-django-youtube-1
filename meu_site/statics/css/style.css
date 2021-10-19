@@ -7,11 +7,17 @@ header{
     border-bottom: 1px solid #999;
     margin-bottom: 2rem;
     display: flex;
+    overflow: hidden;
+    background: linear-gradient(to right, purple);
 }
 
 header  h1 a{
     color:red;
     text-decoration: none;
+}
+
+header h1 a:hover {
+  color: purple;
 }
 
 .nav-left{
