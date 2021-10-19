@@ -34,6 +34,9 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('post_detail',args=[self.slug])
 
+    def get_absolute_url_update(self):
+        return reverse('post_edit',args=[self.slug])
+
     class Meta:
         ordering = ('-publicado',)
 
