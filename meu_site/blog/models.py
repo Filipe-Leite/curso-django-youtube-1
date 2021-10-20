@@ -49,6 +49,8 @@ class Post(models.Model):
 
 @receiver(post_save,sender=Post)
 def insert_slug(sender,instance,**kwargs):
+    if kwargs.get('created',False):
+        print('Criado slug')
     if not instance.slug:
         instance.slug = slugify(instance.titulo)
         return instance.save()
